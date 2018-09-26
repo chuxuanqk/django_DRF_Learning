@@ -24,6 +24,7 @@ class GoodsAdmin(object):
     list_filter = ["name", "click_num", "sold_num", "fav_num", "goods_num", "market_price",
                    "shop_price", "is_new", "is_hot", "add_time", "category__name"]
     style_fields = {"goods_desc": "ueditor"}
+    readonly_fields=["add_time"]  # 只读
 
     class GoodsImagesInline(object):
         model = GoodsImage
@@ -43,6 +44,7 @@ class GoodsCategoryAdmin(object):
 class GoodsBrandAdmin(object):
     list_display = ["category", "image", "name", "desc"]
 
+
     def get_context(self):
         context = super(GoodsBrandAdmin, self).get_context()
         if 'form' in context:
@@ -52,6 +54,7 @@ class GoodsBrandAdmin(object):
 
 class BannerGoodsAdmin(object):
     list_display = ["goods", "image", "index"]
+
 
 
 class HotSearchAdmin(object):

@@ -199,7 +199,7 @@ def UpdateUserSettings():
 
 # 读取用户Settings文件并覆盖默认配置
 UpdateUserSettings()
-
+TIME_ZONE = 'Asia/Shanghai'
 
 # 修改前的
 # 取得配置项参数
